@@ -1,4 +1,6 @@
-def get_audio_features_and_analysis(track_ids, audio_analysis=False):
+
+
+def get_audio_features_and_analysis(track_ids, sp, audio_analysis=False):
     # Maximum 50 track_ids for track info
     track_infos = sp.tracks(track_ids)['tracks']
     
