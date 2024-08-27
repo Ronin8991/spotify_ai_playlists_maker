@@ -11,7 +11,15 @@ Per ora ho creato una funziona che a batch prende le miei canzoni salvate e crea
 2. estrazione di informazioni da playlist già esistenti, 
 3. capire come estrarre le playlist mie e come tenere in ordine anche questa informazione, magari aggiungere alla tabella principale una variabile che indica le playlist a cui appartiene la canzone, sotto forma di lista di stringhe
 
-### Get Recommendations
+### STRATEGIE
+1. account -> liked song -> playlist creation
+2. account -> saved playlist -> playlist refactoring
+- Sistema di valutazione
+
+###Strategia 1 
+1. playlist divise per genere (partendo da sample) 
+
+### Get Recommendations - Audio Features
 1. Valence: felicità positività (float 0,0 - 1,0)
 2. Energy: intesità e attività (float 0,0 - 1,0)
 3. Danceability: quanto è ballabile (float 0,0 - 1,0)
