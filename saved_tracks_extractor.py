@@ -1,4 +1,26 @@
 
+def get_genres(track_ids, sp):
+    # Maximum 50 track_ids for track info
+    track_infos = sp.tracks(track_ids)['tracks']
+    
+    track_data = {
+        'album': [track['album']['name'] for track in track_infos],
+        'album_id': [track['album']['id'] for track in track_infos],
+        'artist': [track['artists'][0]['name'] for track in track_infos],
+        'duration_s': [track['duration_ms'] / 1000 for track in track_infos],
+        'name': [track['name'] for track in track_infos],
+        'popularity': [track['popularity'] for track in track_infos],
+        'id': [track['id'] for track in track_infos],
+    }
+
+    # Maximum 20 
+    album_infos = sp.albums(track_data.album_id)
+
+ 
+    return track_data
+
+
+
 
 def get_audio_features_and_analysis(track_ids, sp, audio_analysis=False):
     # Maximum 50 track_ids for track info
@@ -6,7 +28,10 @@ def get_audio_features_and_analysis(track_ids, sp, audio_analysis=False):
     
     # Maximum 100 track_ids for audio features
     features = sp.audio_features(track_ids)
-    
+
+    # Maximum 20 
+    album_infos = sp.albums([track['album']['id'] for track in track_infos])
+
     track_data = {
         'album': [track['album']['name'] for track in track_infos],
         'artist': [track['artists'][0]['name'] for track in track_infos],
