@@ -11,6 +11,18 @@ Per ora ho creato una funziona che a batch prende le miei canzoni salvate e crea
 2. estrazione di informazioni da playlist già esistenti, 
 3. capire come estrarre le playlist mie e come tenere in ordine anche questa informazione, magari aggiungere alla tabella principale una variabile che indica le playlist a cui appartiene la canzone, sotto forma di lista di stringhe
 
+### Get Recommendations
+1. Valence: felicità positività (float 0,0 - 1,0)
+2. Energy: intesità e attività (float 0,0 - 1,0)
+3. Danceability: quanto è ballabile (float 0,0 - 1,0)
+4. Tempo: BPM (float)
+5. Loudenss: media dell'intensità del suono in dB (float -60 - 0)
+6. Acousticness: confidenza che la traccia sia acustica (float 0,0 - 1,0)
+7. Key: accordo della canzone, ogni numero positivo è un semitono partendo da Do, -1 non è riconosciuta (int -1 - 11)
+8. Instrumentalness: confidenza che la traccia sia strumentale (float 0,0 - 1,0)
+9. Speechiness: quantità di parole (float)
+10. Time Signature: tempo in quarti (int 3 - 7)
+
 ### Rate limit
 
 ##### Develop a backoff-retry strategy
