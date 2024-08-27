@@ -5,16 +5,19 @@ def get_genres(track_ids, sp):
     
     track_data = {
         'album': [track['album']['name'] for track in track_infos],
-        'album_id': [track['album']['id'] for track in track_infos],
+        'artist_id': [track['artists'][0]['id'] for track in track_infos],
         'artist': [track['artists'][0]['name'] for track in track_infos],
         'duration_s': [track['duration_ms'] / 1000 for track in track_infos],
         'name': [track['name'] for track in track_infos],
         'popularity': [track['popularity'] for track in track_infos],
         'id': [track['id'] for track in track_infos],
     }
-
+    if len(track_ids)>20:
+        print('lenght error')
     # Maximum 20 
-    album_infos = sp.albums(track_data.album_id)
+    artist_infos = sp.artists(track_data['artist_id'])['artists']
+    # print(artist_infos[0]['genres'])
+    track_data['genres']=[artist['genres'] for artist in artist_infos]
 
  
     return track_data
