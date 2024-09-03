@@ -1,0 +1,20 @@
+[project]
+name = "spotify-ai-playlists-maker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "spotipy>=2.24.0",
+    "pandas>=2.2.2",
+    "ipykernel>=6.29.5",
+    "jupyter>=1.1.1",
+    "python-dotenv>=1.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv.workspace]
+members = ["music-backup"]

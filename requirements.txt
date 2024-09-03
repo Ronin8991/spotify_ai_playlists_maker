@@ -1,2 +1,5 @@
 spotipy
 pandas
+ipykernel
+jupyter
+python-dotenv
